@@ -1,0 +1,301 @@
+CSS的选择器，  选择标签用的，
+分为基础选择器   又分为，标签选择器，类选择器，id选择器，通配符选择器，
+ 复合选择器。
+/* 类调用   .类名    类名自己定义的，class=“类名” */
+
+例如.yellow {
+        background-color: yellow;
+        color：100px；
+        width: 100px;
+        height: 100px;
+}
+
+div class="red"> 我是一个大盒子 </div>
+
+可以给class设置多个类名，用空格隔开，
+
+
+ID 选择器
+ID标签只能调用一次  id=      #
+ #pink {
+        color: pink;
+    }
+<div id="pink"> 我是一个大盒子 </div>
+
+通配符选择器，  *{
+     
+ } 选择所有标签
+
+CSS 字体属性，
+/* font-family是字体，size文字大小后面跟数字+px 如11px，weight 是文字粗细 后面跟数字，，
+style文字格式，斜着什么的 
+italic是斜着
+ /* 复合属性，font-style font-weight font-size/line-height font-family按照这个顺序来 */
+  例如       font: italic 700 16px 微软雅黑
+CSS文本属性，
+ text-align   水平对齐方式，center  left  right 等等，
+ h1 {
+         text-align: center;
+     }
+装饰文本，可以添加上划线，下划线，删除线什么的。
+underline    overline   line-through   none 啥也没有
+ text-decoration
+文本缩进
+text-indent
+ text-indent: 2em;  一个em是一个文字大小
+行间距，line-height 行高，
+
+css三种样式表，
+1 内部样式表，将所有的css代码抽取出来 单独放在style标签中，
+2 行内样式表，在元素标签内部的style属性中设定css样式，适合简单的，例如，
+<p style="color: red;">贾家洼一男子贾山林公然吃屎，</p>
+3 外部样式表，在外面单独写一个css文件，外面就单独写css之后吧css文件引入html中使用，
+引入外部样式表分为两部 ，第一新建一个css的文件写好样式，第二个，通过link标签引入，
+<link rel="stylesheet" href="css的文件路径">
+
+
+复合选择器， 是由多个基础选择器组成
+ 子代选择器，元素1 元素2 {         } 元素1里面的所有元素2 都改变
+子元素选择器，元素1 >元素2{      }元素1 里面 子级的 元素2 改变
+并级选择器，   元素1，元素2{    }    元素1 和元素2 的都改了，
+伪类选择器，  前面用  ：表示
+ 链接伪类  a:link   选择未访问过的链接
+a：visited  选择已经被访问过的链接
+a：hover 选则鼠标指针位于其上的链接
+a：active  选择活动链接，（鼠标按下去 没弹起来的）  按照这个顺序书写，  lvha
+
+：focus  表单元素的 伪类选择器，，，form里面的。
+
+CSS的元素显示模式，
+就是 元素 以什么方式进行显示，  比如  div一行就一个， span一行可以多个。
+html元素所以一般分为 块元素和 行内元素，   就像div和span
+
+块元素的特点，
+1 比较霸道 自己独占一行
+2高度宽度 外边距和内边距都可以控制
+3 默认宽度是 容器的 100%
+4 是一个容器以及盒子，里面可以放任何行内或者块级元素
+
+注意，文字里面不能使用块级元素，例如  p  和  h 元素里面的
+
+ 行内元素，特点
+1 相邻行内元素在一行上，一行可以显示多个
+2 高度宽度直接设置无效，
+3 行内元素只能容纳文本或者其他行内元素，
+4 默认宽度是他内容本身宽度，
+
+行内块元素， 
+img    input   td   通常称为行内块元素，它具有行内的也有快的特点，
+1 一行可以显示多个行内块元素， （有空隙）
+2 默认宽度是他本身内容宽度，
+3 高度 行高外边距 内边距都可以控制 （块元素特点）
+
+元素显示模式的转换，display：block；行内转换块元素
+display：inline；   块元素转换行内元素
+display：inline-block； 转换为 行内块元素
+
+CSS的背景
+背景颜色background-color: pink;
+背景图片                    -image；  便于控制位置  url是 图片 路径，也可以  none  没有
+ 背景平铺  background-repeat：repeat是平铺 no-repeat是不平铺，repeat-x 沿着x轴平铺  - y是沿着y
+轴平铺！
+背景颜色 和背景图片可以同时设置，不过图片会压住颜色
+背景图片位置，background-position：x y； 参数的意思是 x 坐标和y坐标可以用   方位名词，精确单位
+length  百分数，和 position里面的方位名词 例如  top  center  bottom   left  right  
+方位名词的 xy顺序无关，精确单位有关
+
+背景图片滚动，background-attachment ：  scroll 滚动    或者 fixed   静止一个
+
+背景的复合写法，跟前面font差不多
+font-style font-weight font-size/line-height font-family按照这个顺序来 */
+  例如       font: italic 700 16px 微软雅黑  这是font的
+
+background ：      ；  空格隔开， 没有固定书写顺序，一般 习惯为 背景颜色  图片地址  背景平铺 
+  背景图像滚动  图片位置
+
+CSS的三大特性，  层叠性，继承性，优先级
+1 层叠性， 给相同的选择器设置了相同的样式 先设置的会被覆盖， 不重复的样式 不会被覆盖，
+2继承性，子标签 会继承父标签某些样式， 例如  
+body {
+            color: pink;                             body里面的子标签的行高 是当前字体的 1.5倍
+            font: 12px/1.5 宋体;
+        }
+
+优先级 
+ 选择器相同 叠加执行，
+ 不同的话，按照权重执行，
+！important（这个加在语句后面，例如 color： red！important）> style  （行内样式表）
+> ID选择器 >类选择器>元素选择器> 继承和*
+
+
+
+盒子模型，
+ 边框三部分，border  边框粗细 width，  样式 style     solid是实线边框 dashed 是虚线，，dotted是点线
+和颜色  color可以改变   也可以简写，  border： 1px    solid  red；  没有顺序的  也可以单独设置
+border-top：
+ border-collapse：collapse； 这是合并相邻的边框
+ 边框 会影响盒子的实际大小
+
+内边距 设置边框与内容的距离， padding-top    - left  等上下左右，
+复合写法  padding  后面跟一个值就是四个边框都是 那个像素边框，2 个值的话 一个是上下  一个是左右
+3个值的话，1个是上，2是左右  3是下      4个，上 右  左  下
+
+外边距，margin  使用方法和内边距一样，
+
+外边距可以让盒子水平居中，有俩条件一个是盒子指定了宽度，左右外边距设置为auto
+
+
+list-style :none 清除ul 的那个点
+
+
+圆角边框 border-radius、
+
+box-shadow  盒子阴影，五个值， 水平位置，垂直位置，   模糊距离   阴影尺寸，颜 色
+
+定位，position 
+z-index可以设置定位盒子的 上下位置，前后次序，（z轴）例如
+{z-index: 1}   后面的数字越大，盒子越来越靠上。如果 值相同，按照书写顺序，后来者居上，  
+
+display：none  可以隐藏对象，隐藏之后不保留原位置，
+display：block  除了转换为块级元素以外，还有显示元素的意思。
+
+visibility 可见性
+visibility：hidden  隐藏    保留原位置和display none不一样
+visibility：visible  显示
+
+overflow 溢出（超出盒子的内容）      hidden  超出部分隐藏     scroll 溢出的部分显示滚动条 ，不溢出也显示  
+  overflow ：auto  在需要的时候添加滚动条，自动适应。
+
+精灵图，  利用背景，background url（）  和 background-position 来显示出固定区域，
+
+字体图标，iconfont  简单的小图标可以用 字体图标用，那些大的最好还用精灵图
+ 下载字体图标  Powercfg /batteryreportPowercfg /batteryreport    和   www.iconfont.cn
+
+
+style 里面声明
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?5xn65k');
+  src:  url('fonts/icomoon.eot?5xn65k#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?5xn65k') format('truetype'),
+    url('fonts/icomoon.woff?5xn65k') format('woff'),
+    url('fonts/icomoon.svg?5xn65k#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+字体图标在style.css里面 的方框
+
+字体 font-family ：icomoon      字体声明为icomoon   
+
+三角，盒子不设置行和高，只设置边框，三边隐藏，剩下的是三角，
+border
+
+鼠标样式， cursor      default 默认小白箭头， pointer 小手   move 移动  text 文本  notallow 禁止
+
+outline ：none 取消表单蓝色轮廓线    text 文本框
+reseize ：none 取消文本域的拉动按钮  textarea 文本域， input输入的
+
+vertical-align 设置元素垂直对齐方式，只针对行内元素和行内块元素生效，top  middle  bottom 
+
+单行文本溢出省略号显示，
+1 先强制一行内显示文本  white-space ： nowrap
+2超出部分隐藏，overflow ：hidden
+3用省略号代替隐藏部分 text-overflow ： ellipsis
+
+ 
+css初始化。
+
+html5
+  header 头部标签，nav 导航标签 article 内容标签 section 定义文档某个区域
+aside 侧边栏标签   footer 尾部标签
+
+audio 音频 video 视频
+
+submit 提交
+input 新的表单，search 搜索框  email邮箱 time 时间  tel手机号码 color颜色选择表单
+
+新增表单属性，required=required  必须填     placeholder 提示信息  
+autofocus  自动聚焦，箭头自动过去。autocomplete  提示之前输入过的值，需要定义name属性
+multiple  多选文件提交，
+
+css的属性选择器，
+input【特有属性】还可以根据属性等于特定值来选择，
+例如 input[value] 选取有value属性的input
+
+
+
+伪类选择器，E：first-child  匹配父元素种的第一个子元素E
+E：last-child  匹配最后一个子元素E
+E：nth-child（） 匹配父元素中第n个子元素E  n可以是数字 关键字，或者公式even 偶数    odd奇数
+
+
+伪元素选择器 ：：before  在盒子里的前面输入，：：before{
+content=‘’
+  ：：after}在盒子里后面输入
+
+filter ：函数（）  例如  filter：blur（5px）  模糊处理，数值越大越模糊
+
+
+box-sisizing：border-box
+
+CSS过度，transition：要过度的属性   花费时间 运动曲线  何时开始；    常搭配：hover使用
+、
+2D转换
+transform：translate（x，y），单位是px ，移动到那个坐标    位移
+transform：rotate（度数）  单位是deg  旋转
+transform-origin： x y； 设置旋转的中心点，
+transform：scale（x，y）  x和y填数字，宽和高就变成几倍也可以进行缩小。数字小于1就是缩小
+他不会影响其他盒子，从中心点往外放大或者缩小。中心点也可以用origin 改 
+2D转换可以综合写，transform：translate（） rotate（） scale（），有顺序问题，按照顺序运行，
+位移要放到第一位
+
+动画 用 keyframes
+定义动画
+@keyframes 动画名称 {
+0%{
+width:0px}
+100%{
+width:200px
+}  也可以划分开，25%  50% 等等 
+
+调用动画
+animation-name ：动画名称；
+持续时间
+animation-duration：1s持续时间；
+运动曲线
+animation-timing-function 默认为ease      linear是匀速  steps（8） 分步数运行
+何时开始
+animation-delay：1s；  默认为 0s
+规定动画重复多少次，默认一次
+animation-iteration-count：  默认一次       infinite无限次
+是否反方向播放
+animation-direction：   alternate  反方播放，默认为normal  不反方向
+animation-fill-mode 规定动画结束后状态，     保持   forwards        回到起始backwards
+animation-play-state  规定动画运行或者停止。与hover搭配
+
+
+动画序列，
+可以做多个状态的变化，  keyframe 关键帧  
+里面的15%  百分比 必须是整数，百分比为 时间的划分，
+
+动画简写
+animation：动画名称 持续时间 运动曲线  何时开始  播放次数  是否反方向   动画起始或者结束状态
+name和 duration一定要写 上
+
+3D转换
+3d移动  translate3d（x，y，z）
+translform:translateX():仅仅实在x轴上移动，单位一般为px
+translform:translateY():仅仅实在Y轴上移动，单位一般为px 正数向外移动，就是我们眼睛这边
+如果在网页中想要产生3d效果 需要透视  perspective
+透视也叫视距，眼睛到屏幕的距离   模拟的距离 透视写到被观察元素的父盒子
+
+3d旋转，rotate3d
+rotate
+
+
+3d呈现，transform-style 控制子元素是否展示3d空间，默认值为不开启 flat
+transform-style：preserve3d；  子元素开启立体空间
+代码写给父级，但是影响子盒子
+
+
